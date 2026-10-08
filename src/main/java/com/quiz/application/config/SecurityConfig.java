@@ -111,7 +111,8 @@ public class SecurityConfig {
                 // PUBLIC ENDPOINTS
                 // =========================================
 
-            		.requestMatchers("/api/users/register","/api/auth/**").permitAll()
+            		.requestMatchers("/api/auth/login").permitAll()
+            		.requestMatchers("/api/users/register").permitAll()
             		.requestMatchers(HttpMethod.GET, "/api/users/me").hasAnyRole("USER", "ADMIN")
 
                 // =========================================
